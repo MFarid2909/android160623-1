@@ -1,0 +1,37 @@
+package com.example.androidbootcamp16june
+
+import java.util.Scanner
+
+fun main() {
+
+        val scanner = Scanner(System.`in`)
+
+        println("Enter two numbers:")
+        val num1 = scanner.nextInt()
+        val num2 = scanner.nextInt()
+
+        println("Choose your operation:")
+        println("1. Addition")
+        println("2. Subtraction")
+        println("3. Multiplication")
+        println("4. Division")
+        println("5. Modulus")
+
+        val choice = scanner.nextInt()
+
+        when (choice) {
+                1 -> println("Result: " + (num1 + num2))
+                2 -> println("Result: " + (num1 - num2))
+                3 -> println("Result: " + (num1 * num2))
+                4 -> {
+                        if (num2 != 0) {
+                                println("Result: " + (num1 / num2))
+                        } else {
+                                println("You can't divide to zero!")
+                        }
+                }
+                5 -> println("Result: " + (num1 % num2))
+                else -> println("Wrong choice. Try again!")
+
+        }
+    }
