@@ -1,0 +1,32 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    println("Vize qiymətini daxil edin:")
+    val vizeQiymeti = scanner.nextDouble()
+
+    println("Final qiymətini daxil edin:")
+    val finalQiymeti = scanner.nextDouble()
+
+    val ortalama = vizeQiymeti * 0.4 + finalQiymeti * 0.6
+
+    val harfDerecesi = when {
+        ortalama >= 71 -> "A"
+        ortalama >= 61 -> "B"
+        ortalama >= 51 -> "C"
+        else -> "F"
+    }
+
+    val mesaj = if (harfDerecesi == "A") {
+        "Ortalamanız $ortalama. Əla!"
+    } else if (harfDerecesi == "B") {
+        "Ortalamanız $ortalama. Yaxşı!"
+    } else if (harfDerecesi == "C") {
+        "Ortalamanız $ortalama. Orta!"
+    } else {
+        "Ortalamanız $ortalama. Kəsr!"
+    }
+
+    println(mesaj)
+}
